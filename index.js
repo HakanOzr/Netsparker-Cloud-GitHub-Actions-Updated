@@ -102,11 +102,11 @@ function getSeverityLevel(severityLevelEnum) {
 
 function isVulnerabilityLevelValid(vulnerabilityLevel) {
   return (
-    vulnerabilityLevel === VULNERABILITY_LEVELS.CRITICAL ||
-    vulnerabilityLevel === VULNERABILITY_LEVELS.HIGH ||
-    vulnerabilityLevel === VULNERABILITY_LEVELS.MEDIUM ||
-    vulnerabilityLevel === VULNERABILITY_LEVELS.LOW ||
-    vulnerabilityLevel === VULNERABILITY_LEVELS.NONE
+    vulnerabilityLevel === SEVERITY_LEVELS.CRITICAL ||
+    vulnerabilityLevel === SEVERITY_LEVELS.HIGH ||
+    vulnerabilityLevel === SEVERITY_LEVELS.MEDIUM ||
+    vulnerabilityLevel === SEVERITY_LEVELS.LOW ||
+    vulnerabilityLevel === SEVERITY_LEVELS.NONE
   );
 }
 
