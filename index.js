@@ -27,10 +27,10 @@ const VULNERABILITY_LEVELS = {
 
 const SEVERITY_LEVELS = {
   CRITICAL: 'Critical',
-  HIGH: 'High',
-  MEDIUM: 'Medium',
-  LOW: 'Low',
-  BEST_PRACTICE: 'BestPractice',
+  HIGH: 'Critical,High',
+  MEDIUM: 'Critical,High,Medium',
+  LOW: 'Critical,High,Medium,Low',
+  BEST_PRACTICE: 'Critical,High,Medium,Low,Best Practice',
   NONE: '',
 }
 
