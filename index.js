@@ -388,7 +388,7 @@ async function main() {
     }
     console.log("Scan info retrieved for: " + scanInfo.ScanTaskId);
 
-    let failOnLevelEnum = getVulnerabilityLevel(failOnLevel);
+    let failOnLevelEnum = getSeverityLevel(failOnLevel);
 
     if (failOnLevelEnum === SEVERITY_LEVELS.NONE) {
       console.log(`No vulnerability level check is performed.`);
