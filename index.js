@@ -395,7 +395,8 @@ async function main() {
       isScanOngoing = true;
     } else {
       let foundedSeverityAndCounts = scanInfo.FoundedSeverityAndCounts;
-
+      console.log(foundedSeverityAndCounts);
+      
       if (foundedSeverityAndCounts) {
         let criticalCount = parseInt(foundedSeverityAndCounts.Critical);
         let highCount = parseInt(foundedSeverityAndCounts.High);
