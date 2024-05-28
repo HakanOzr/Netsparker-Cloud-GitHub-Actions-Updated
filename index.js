@@ -31,7 +31,7 @@ const SEVERITY_LEVELS = {
   MEDIUM: 'Critical,High,Medium',
   LOW: 'Critical,High,Medium,Low',
   BEST_PRACTICE: 'Critical,High,Medium,Low,Best Practice',
-  NONE: '',
+  NONE: 'DoNotFail',
 }
 
 const requestType = {
@@ -396,7 +396,6 @@ async function main() {
     } else {
       let foundedSeverityAndCounts = scanInfo.FoundedSeverityAndCounts;
       console.log(foundedSeverityAndCounts);
-      
       if (foundedSeverityAndCounts) {
         let criticalCount = parseInt(foundedSeverityAndCounts.Critical);
         let highCount = parseInt(foundedSeverityAndCounts.High);
@@ -483,6 +482,9 @@ async function main() {
         isScanOngoing = false;
         break;
     }
+
+    
+
   } while (isScanOngoing);
 
   // Complete
