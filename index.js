@@ -28,12 +28,11 @@ const VULNERABILITY_LEVELS = {
 
 const SEVERITY_LEVELS = {
   CRITICAL: 'Critical',
-  HIGH: 'High',
-  MEDIUM: 'Medium',
-  LOW: 'Low',
-  INFORMATION: 'Information',
-  BEST_PRACTICE: 'BestPractice',
-  NONE: '',
+  HIGH: 'Critical,High',
+  MEDIUM: 'Critical,High,Medium',
+  LOW: 'Critical,High,Medium,Low',
+  BEST_PRACTICE: 'Critical,High,Medium,Low,Best Practice',
+  NONE: 'DoNotFail',
 }
 
 const requestType = {
@@ -408,7 +407,6 @@ async function main() {
         let highCount = parseInt(foundedSeverityAndCounts.High);
         let mediumCount = parseInt(foundedSeverityAndCounts.Medium);
         let lowCount = parseInt(foundedSeverityAndCounts.Low);
-        let infoCount = parseInt(foundedSeverityAndCounts.Information);
         let bestPracticeCount = parseInt(foundedSeverityAndCounts.BestPractice);
 
         let failMessage = '';
@@ -435,12 +433,6 @@ async function main() {
           case SEVERITY_LEVELS.LOW:
             if (criticalCount > 0 || highCount > 0 || mediumCount > 0 || lowCount > 0) {
               failMessage = `Critical or high or medium or low vulnerabilities found: Critical: ${criticalCount}, High: ${highCount}, Medium: ${mediumCount}, Low: ${lowCount}`;
-            }
-            isScanOngoing = false;
-            break;
-          case SEVERITY_LEVELS.INFORMATION:
-            if (criticalCount > 0 || highCount > 0 || mediumCount > 0 || lowCount > 0 || infoCount > 0) {
-              failMessage = `Critical or high or medium or low or info vulnerabilities found: Critical: ${criticalCount}, High: ${highCount}, Medium: ${mediumCount}, Low: ${lowCount}, Info: ${infoCount}`;
             }
             isScanOngoing = false;
             break;
