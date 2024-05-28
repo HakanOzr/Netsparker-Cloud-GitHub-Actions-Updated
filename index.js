@@ -22,17 +22,16 @@ const VULNERABILITY_LEVELS = {
   HIGH: 'High',
   MEDIUM: 'Medium',
   LOW: 'Low',
-  INFO: 'Info',
   NONE: '',
 }
 
 const SEVERITY_LEVELS = {
   CRITICAL: 'Critical',
-  HIGH: 'Critical,High',
-  MEDIUM: 'Critical,High,Medium',
-  LOW: 'Critical,High,Medium,Low',
-  BEST_PRACTICE: 'Critical,High,Medium,Low,Best Practice',
-  NONE: 'DoNotFail',
+  HIGH: 'High',
+  MEDIUM: 'Medium',
+  LOW: 'Low',
+  BEST_PRACTICE: 'BestPractice',
+  NONE: '',
 }
 
 const requestType = {
@@ -75,8 +74,6 @@ function getVulnerabilityLevel(vulnerabilityLevelEnum) {
       return VULNERABILITY_LEVELS.MEDIUM;
     case VULNERABILITY_LEVELS.LOW:
       return VULNERABILITY_LEVELS.LOW;
-    case VULNERABILITY_LEVELS.INFO:
-      return VULNERABILITY_LEVELS.INFO;
     case VULNERABILITY_LEVELS.NONE:
       return VULNERABILITY_LEVELS.NONE;
     default:
@@ -94,8 +91,6 @@ function getSeverityLevel(severityLevelEnum) {
       return SEVERITY_LEVELS.MEDIUM;
     case SEVERITY_LEVELS.LOW:
       return SEVERITY_LEVELS.LOW;
-    case SEVERITY_LEVELS.INFORMATION:
-      return SEVERITY_LEVELS.INFORMATION;
     case SEVERITY_LEVELS.BEST_PRACTICE:
       return SEVERITY_LEVELS.BEST_PRACTICE;
     case SEVERITY_LEVELS.NONE:
@@ -111,7 +106,6 @@ function isVulnerabilityLevelValid(vulnerabilityLevel) {
     vulnerabilityLevel === VULNERABILITY_LEVELS.HIGH ||
     vulnerabilityLevel === VULNERABILITY_LEVELS.MEDIUM ||
     vulnerabilityLevel === VULNERABILITY_LEVELS.LOW ||
-    vulnerabilityLevel === VULNERABILITY_LEVELS.INFO ||
     vulnerabilityLevel === VULNERABILITY_LEVELS.NONE
   );
 }
